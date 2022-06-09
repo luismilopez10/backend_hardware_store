@@ -9,7 +9,7 @@ public class ProductDto {
     private String description;
     private Integer stock;
     private Double price;
-    private ProviderDto provider;
+    private String providerId;
     private Integer minimumAmount;
     private Integer maximumAmount;
 }

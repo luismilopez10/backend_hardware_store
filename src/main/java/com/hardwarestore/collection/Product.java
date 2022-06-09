@@ -13,7 +13,7 @@ public class Product {
     private String description;
     private Integer stock;
     private Double price;
-    private Provider provider;
+    private String providerId;
     private Integer minimumAmount;
     private Integer maximumAmount;
 }
