@@ -33,8 +33,10 @@ public class GetAllBillsRoute {
                     operationId = "getAllBills",
                     responses = {
                             @ApiResponse(responseCode = "200", description = "Successful operation",
-                            content = @Content(schema = @Schema(implementation = Bill.class)))}
-            ))
+                            content = @Content(schema = @Schema(implementation = Bill.class)))
+                    }
+            )
+    )
     public RouterFunction<ServerResponse> getAllBills(GetAllBillsUseCase getAllBillsUseCase) {
         return route(GET("/api/v1/bills/"),
                 request -> ServerResponse.status(HttpStatus.OK)
