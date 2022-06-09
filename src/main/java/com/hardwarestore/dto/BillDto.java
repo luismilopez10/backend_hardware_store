@@ -1,8 +1,11 @@
 package com.hardwarestore.dto;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.util.List;
 
+@Data
 public class BillDto {
     private String id;
     private LocalDate date;
