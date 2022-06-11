@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+
 @Service
 public class PostReceiptUseCase {
 
@@ -17,6 +19,7 @@ public class PostReceiptUseCase {
     private ReceiptMapper mapper;
 
     public Mono<ReceiptDto> postReceipt(ReceiptDto receiptDto) {
+        receiptDto.setDate(LocalDate.now());
         return receiptRepository.save(mapper.fromReceiptDtoToReceipt(receiptDto)).map(mapper::fromReceiptToReceiptDto);
     }
 }
