@@ -29,9 +29,9 @@ public class PostProductRoute {
             MediaType.APPLICATION_JSON_VALUE},
             beanClass = PostProductUseCase.class,
             method = RequestMethod.POST,
-            beanMethod = "postProducts",
+            beanMethod = "postProduct",
             operation = @Operation(
-                    operationId = "postProducts",
+                    operationId = "postProduct",
                     responses = {
                             @ApiResponse(responseCode = "201", description = "Successful operation",
                                     content = @Content(schema = @Schema(implementation = Product.class))),
