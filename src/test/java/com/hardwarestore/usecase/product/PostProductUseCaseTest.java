@@ -31,11 +31,8 @@ class PostProductUseCaseTest {
         product1.setMinimumAmount(50);
         product1.setMaximumAmount(1000);
 
-
-
-        StepVerifier
-                .create(Mono.just(Mockito.when(useCase.postProduct(product1))
-                        .thenReturn(Mono.just(product1)))).expectNextCount(1).expectComplete().verify();
+        StepVerifier.create(Mono.just(Mockito.when(useCase.postProduct(product1))
+                .thenReturn(Mono.just(product1)))).expectNextCount(1).expectComplete().verify();
 
 
     }
