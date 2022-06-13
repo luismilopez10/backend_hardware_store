@@ -48,9 +48,9 @@ class GetAllProductsUseCaseTest {
         product1.setMaximumAmount(1000);
 
         Mockito.when(repository.findAll()).thenReturn(Flux.just(product1));
-        Flux<ProductDto> productDTOFlux = useCase.getAllProducts();
+        Flux<ProductDto> productDtoFlux = useCase.getAllProducts();
 
-        StepVerifier.create(productDTOFlux)
+        StepVerifier.create(productDtoFlux)
                 .expectNextCount(1)
                 .verifyComplete();
 
