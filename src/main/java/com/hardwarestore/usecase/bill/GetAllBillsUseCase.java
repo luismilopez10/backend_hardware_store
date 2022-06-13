@@ -16,6 +16,11 @@ public class GetAllBillsUseCase {
     @Autowired
     private BillMapper mapper;
 
+    public GetAllBillsUseCase(BillRepository billRepository, BillMapper mapper) {
+        this.billRepository = billRepository;
+        this.mapper = mapper;
+    }
+
     public Flux<BillDto> getAllBills() {
         return billRepository.findAll().map(mapper::fromBillToBillDto);
     }

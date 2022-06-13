@@ -16,6 +16,11 @@ public class GetAllReceiptsUseCase {
     @Autowired
     private ReceiptMapper mapper;
 
+    public GetAllReceiptsUseCase(ReceiptRepository receiptRepository, ReceiptMapper mapper) {
+        this.receiptRepository = receiptRepository;
+        this.mapper = mapper;
+    }
+
     public Flux<ReceiptDto> getAllReceipts() {
         return receiptRepository.findAll().map(mapper::fromReceiptToReceiptDto);
     }

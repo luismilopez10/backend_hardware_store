@@ -16,6 +16,11 @@ public class GetAllProductsUseCase {
     @Autowired
     private ProductMapper mapper;
 
+    public GetAllProductsUseCase(ProductRepository productRepository, ProductMapper mapper) {
+        this.productRepository = productRepository;
+        this.mapper = mapper;
+    }
+
     public Flux<ProductDto> getAllProducts() {
         return productRepository.findAll().map(mapper::fromProductToProductDto);
     }

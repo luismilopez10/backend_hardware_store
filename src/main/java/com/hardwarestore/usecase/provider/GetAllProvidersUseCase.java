@@ -16,6 +16,11 @@ public class GetAllProvidersUseCase {
     @Autowired
     private ProviderMapper mapper;
 
+    public GetAllProvidersUseCase(ProviderRepository providerRepository, ProviderMapper mapper) {
+        this.providerRepository = providerRepository;
+        this.mapper = mapper;
+    }
+
     public Flux<ProviderDto> getAllProviders() {
         return providerRepository.findAll().map(mapper::fromProviderToProviderDto);
     }
