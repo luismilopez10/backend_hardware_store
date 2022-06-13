@@ -19,7 +19,7 @@ class PostBillUseCaseTest {
     PostBillUseCase useCase;
 
     @Test
-    void shouldSaveProvider() {
+    void shouldSaveBill() {
         ProductSold productSold1 = new ProductSold();
         productSold1.setId("product1");
         productSold1.setName("Screw");
