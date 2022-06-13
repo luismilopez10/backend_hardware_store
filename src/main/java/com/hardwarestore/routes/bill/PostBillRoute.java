@@ -26,17 +26,22 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class PostBillRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/bills/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/bills/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = PostBillUseCase.class,
             method = RequestMethod.POST,
             beanMethod = "postBill",
             operation = @Operation(
                     operationId = "postBill",
                     responses = {
-                            @ApiResponse(responseCode = "201", description = "Successful operation",
-                            content = @Content(schema = @Schema(implementation = Bill.class))),
-                            @ApiResponse(responseCode = "400", description = "Invalid recipe details supplied")},
+                            @ApiResponse(
+                                    responseCode = "201",
+                                    description = "Successful operation",
+                                    content = @Content(schema = @Schema(implementation = Bill.class))),
+                            @ApiResponse(
+                                    responseCode = "400",
+                                    description = "Invalid recipe details supplied")},
                     requestBody = @RequestBody(content = @Content(schema = @Schema(implementation = Bill.class)))
             )
     )

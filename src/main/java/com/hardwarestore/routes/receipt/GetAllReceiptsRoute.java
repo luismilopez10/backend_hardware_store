@@ -24,8 +24,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetAllReceiptsRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/receipts/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/receipts/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = GetAllReceiptsUseCase.class,
             method = RequestMethod.GET,
             beanMethod = "getAllReceipts",

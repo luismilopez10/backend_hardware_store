@@ -24,8 +24,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetAllProductsRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/products/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/products/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = GetAllProductsUseCase.class,
             method = RequestMethod.GET,
             beanMethod = "getAllProducts",

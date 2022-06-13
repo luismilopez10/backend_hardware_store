@@ -25,8 +25,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class PostProviderRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/providers/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/providers/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = PostProviderUseCase.class,
             method = RequestMethod.POST,
             beanMethod = "postProvider",

@@ -24,16 +24,19 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetAllBillsRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/bills/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/bills/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = GetAllBillsUseCase.class,
             method = RequestMethod.GET,
             beanMethod = "getAllBills",
             operation = @Operation(
                     operationId = "getAllBills",
                     responses = {
-                            @ApiResponse(responseCode = "200", description = "Successful operation",
-                            content = @Content(schema = @Schema(implementation = Bill.class)))
+                            @ApiResponse(
+                                    responseCode = "200",
+                                    description = "Successful operation",
+                                    content = @Content(schema = @Schema(implementation = Bill.class)))
                     }
             )
     )

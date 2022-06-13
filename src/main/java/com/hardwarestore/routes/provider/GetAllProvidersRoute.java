@@ -24,8 +24,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetAllProvidersRoute {
 
     @Bean
-    @RouterOperation(path = "/api/v1/providers/", produces = {
-            MediaType.APPLICATION_JSON_VALUE},
+    @RouterOperation(
+            path = "/api/v1/providers/",
+            produces = {MediaType.APPLICATION_JSON_VALUE},
             beanClass = GetAllProvidersUseCase.class,
             method = RequestMethod.GET,
             beanMethod = "getAllProviders",
