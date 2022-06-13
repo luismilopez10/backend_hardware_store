@@ -34,7 +34,7 @@ public class GetAllBillsUseCaseTest {
     }
 
     @Test
-    void shouldGetAllBIlls() {
+    void shouldGetAllBills() {
         ProductSold productSold1 = new ProductSold();
         productSold1.setId("product1");
         productSold1.setName("Screw");
