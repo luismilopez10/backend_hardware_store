@@ -15,7 +15,7 @@ class PostProductUseCaseTest {
     PostProductUseCase useCase;
 
     @Test
-    void shouldSaveProvider() {
+    void shouldSaveProduct() {
         Provider provider1 = new Provider();
         provider1.setId("provider1");
         provider1.setName("Luis Miguel");
