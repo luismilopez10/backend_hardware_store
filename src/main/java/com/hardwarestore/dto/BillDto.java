@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class BillDto {
@@ -11,6 +12,6 @@ public class BillDto {
     private LocalDate date;
     private String clientName;
     private String employeeName;
-    private List<String> productsId;
+    private Map<String,Integer> products;
     private Double totalPrice;
 }

@@ -15,7 +15,9 @@ import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 public class GetAllBillsUseCaseTest {
@@ -52,7 +54,10 @@ public class GetAllBillsUseCaseTest {
         bill1.setDate(LocalDate.now());
         bill1.setClientName("Daniela");
         bill1.setEmployeeName("Raul");
-        bill1.setProductsId(List.of(productSold1.getId(), productSold2.getId()));
+        Map<String, Integer> products = new HashMap<String, Integer>();
+        products.put(productSold1.getId(),10);
+        products.put(productSold2.getId(),1);
+        bill1.setProducts(products);
         bill1.setTotalPrice(14500.0);
 
         Mockito.when(repository.findAll()).thenReturn(Flux.just(bill1));

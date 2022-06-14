@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Map;
 
 @Data
 @Document
@@ -15,6 +15,6 @@ public class Bill {
     private LocalDate date;
     private String clientName;
     private String employeeName;
-    private List<String> productsId;
+    private Map<String,Integer> products;
     private Double totalPrice;
 }
