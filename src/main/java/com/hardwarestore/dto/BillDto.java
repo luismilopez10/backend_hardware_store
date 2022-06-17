@@ -1,10 +1,10 @@
 package com.hardwarestore.dto;
 
+import com.hardwarestore.collection.BillProducts;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 @Data
 public class BillDto {
@@ -12,6 +12,6 @@ public class BillDto {
     private LocalDate date;
     private String clientName;
     private String employeeName;
-    private Map<String,Integer> products;
+    private List<BillProducts> products;
     private Double totalPrice;
 }

@@ -1,5 +1,6 @@
 package com.hardwarestore.usecase.bill;
 
+import com.hardwarestore.collection.BillProducts;
 import com.hardwarestore.collection.ProductSold;
 import com.hardwarestore.dto.BillDto;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,9 +41,9 @@ class PostBillUseCaseTest {
         bill1.setDate(LocalDate.now());
         bill1.setClientName("Daniela");
         bill1.setEmployeeName("Raul");
-        Map<String, Integer> products = new HashMap<String, Integer>();
-        products.put(productSold1.getId(),10);
-        products.put(productSold2.getId(),1);
+        List<BillProducts> products = new ArrayList<>();
+        products.add(new BillProducts(productSold1.getId(),productSold1.getName(),productSold1.getPrice(), productSold1.getAmount()));
+        products.add(new BillProducts(productSold2.getId(),productSold2.getName(),productSold2.getPrice(), productSold2.getAmount()));
         bill1.setProducts(products);
         bill1.setTotalPrice(14500.0);
 
