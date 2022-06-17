@@ -1,7 +1,6 @@
 package com.hardwarestore.usecase.bill;
 
 import com.hardwarestore.collection.Bill;
-import com.hardwarestore.collection.BillProducts;
 import com.hardwarestore.collection.ProductSold;
 import com.hardwarestore.dto.BillDto;
 import com.hardwarestore.mapper.BillMapper;
@@ -17,7 +16,6 @@ import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @SpringBootTest
@@ -55,9 +53,9 @@ public class GetAllBillsUseCaseTest {
         bill1.setDate(LocalDate.now());
         bill1.setClientName("Daniela");
         bill1.setEmployeeName("Raul");
-        List<BillProducts> products = new ArrayList<>();
-        products.add(new BillProducts(productSold1.getId(),productSold1.getName(),productSold1.getPrice(), productSold1.getAmount()));
-        products.add(new BillProducts(productSold2.getId(),productSold2.getName(),productSold2.getPrice(), productSold2.getAmount()));
+        List<ProductSold> products = new ArrayList<>();
+        products.add(productSold1);
+        products.add(productSold2);
         bill1.setProducts(products);
         bill1.setTotalPrice(14500.0);
 

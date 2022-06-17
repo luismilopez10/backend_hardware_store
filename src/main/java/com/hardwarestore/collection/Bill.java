@@ -15,6 +15,6 @@ public class Bill {
     private LocalDate date;
     private String clientName;
     private String employeeName;
-    private List<BillProducts> products;
+    private List<ProductSold> products;
     private Double totalPrice;
 }

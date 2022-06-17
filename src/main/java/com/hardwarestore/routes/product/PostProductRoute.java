@@ -34,9 +34,13 @@ public class PostProductRoute {
             operation = @Operation(
                     operationId = "postProduct",
                     responses = {
-                            @ApiResponse(responseCode = "201", description = "Successful operation",
+                            @ApiResponse(
+                                    responseCode = "201",
+                                    description = "Successful operation",
                                     content = @Content(schema = @Schema(implementation = Product.class))),
-                            @ApiResponse(responseCode = "400", description = "Invalid recipe details supplied")},
+                            @ApiResponse(
+                                    responseCode = "400",
+                                    description = "Invalid recipe details supplied")},
                     requestBody = @RequestBody(content = @Content(schema = @Schema(implementation = Product.class)))
             )
     )

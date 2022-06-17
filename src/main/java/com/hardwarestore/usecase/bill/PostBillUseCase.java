@@ -19,7 +19,7 @@ public class PostBillUseCase {
     private BillMapper mapper;
 
     public Mono<BillDto> postBill(BillDto billDto){
-        billDto.setDate(LocalDate.now());
+//        billDto.setDate(LocalDate.now());
         return billRepository.save(mapper.fromBillDtoToBill(billDto)).map(mapper::fromBillToBillDto);
     }
 }
